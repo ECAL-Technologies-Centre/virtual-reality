@@ -1,0 +1,20 @@
+{% assign feature_text = page.feature_text %}
+{% assign feature_image = page.feature_image %}
+{% assign feature_video = page.feature_video %}
+{% if page.collectionpage %}
+  {% assign collectiondata = site.collections | where: "label", page.collectionpage | first %}
+  {% assign feature_text = collectiondata.feature_text %}
+  {% assign feature_image = collectiondata.feature_image %}
+{% endif %}
+
+{% if feature_text or feature_image %}
+  <div class="feature">
+    <div class="vid">
+      <video src="{{ feature_video }}" muted autoplay loop>
+      </video>
+    </div>
+    <div class="head-container typeset">
+      <h1>{{ feature_text  }}</h1>
+    </div>
+  </div>
+{% endif %}

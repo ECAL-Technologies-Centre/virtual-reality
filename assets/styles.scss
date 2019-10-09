@@ -1,0 +1,104 @@
+---
+title: false
+styles: true
+---
+
+// Background colours
+$backgroundColour: #ffffff !default;
+$codeBackgroundColour: #fafafa !default;
+$featureBackgroundColour: #f9fafa !default;
+$accentColour: #05bf85 !default;
+
+// Text colours
+$headingColour: #242e2b !default;
+$bodyColour: #384743 !default;
+$linkColour: #01003a !default;
+$hoverColour: #151881 !default;
+$focusColour: #fa407a !default;
+$captionColour: #a8adac !default;
+$white: #ffffff !default;
+
+// Typography
+$bodytype: (
+  font-family: "Helvetica Neue, Arial, sans-serif",
+  regular: 400,
+  bold: 700,
+  italic: italic,
+  cap-height: 0.75
+) !default;
+
+$headingtype: (
+  font-family: '"Helvetica Neue", Arial, sans-serif',
+  regular: 400,
+  bold: 700,
+  cap-height: 0.75
+) !default;
+
+$monospacetype: (
+  font-family: "Menlo, monospace",
+  regular: 400,
+  cap-height: 0.68
+) !default;
+
+// Font import, if you're using a non-standard web font
+//@import url("https://fonts.googleapis.com/css?family=Merriweather:400,700");
+
+@import "alembic";
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+.feature {
+    width: 100vw;
+    position: relative;
+    
+    &>.head-container {
+        z-index: 10;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        display: flex;
+        align-items: self-start;
+        padding: 5vw;
+        justify-content: center;
+        width: 100%;
+        align-content: center;
+        justify-content: center;
+        align-items: flex-end;
+
+        &>h1 {
+            color: white;
+            font-size: 4rem;
+            mix-blend-mode: difference;
+        }
+    }
+
+}
+
+@media (min-aspect-ratio: 16/9) {
+    video {
+      width: 100%;
+      height: 100%;
+      max-height: 100vh;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  
+  @media (max-aspect-ratio: 16/9) {
+    video {
+
+        width: 100%;
+        height: auto;
+    }
+  }
+
+.videoTitle {
+    background-color: red;
+    width: 100vw;
+    height: 100vh;
+    position: block;
+    flex-basis: 100%;
+}
